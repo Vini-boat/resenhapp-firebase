@@ -57,8 +57,10 @@ function PartySection() {
             setSelectedParty(parties[1])
         }
     }
-
-    const isInput = isAdding || parties.length < 1
+    let isInput = false;
+    if (!loading){
+        isInput = isAdding || parties.length < 1
+    }
     return !loading && (
         <Card>
             <Card.Header>
